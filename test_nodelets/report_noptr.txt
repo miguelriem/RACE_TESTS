@@ -1,0 +1,56 @@
+Node [/nodelet1]
+Publications: 
+* /nodelet_manager/bond [bond/Status]
+* /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+* /nodelet_manager/bond [bond/Status]
+
+Services: 
+* /nodelet1/get_loggers
+* /nodelet1/set_logger_level
+Pid: 25415
+Connections:
+* topic: /rosout
+* to: /rosout
+* direction: outbound
+* transport: TCPROS
+* topic: /nodelet_manager/bond
+* to: /nodelet1
+* direction: outbound
+* transport: INTRAPROCESS
+* topic: /nodelet_manager/bond
+* to: /nodelet_manager
+* direction: outbound
+* transport: TCPROS
+* topic: /nodelet_manager/bond
+* to: /nodelet2
+* direction: outbound
+* transport: TCPROS
+* topic:
+* /nodelet_manager/bond
+* to: /nodelet1
+* (http://BLACKN:34634/)
+* direction:
+* inbound
+* transport:
+* INTRAPROCESS
+* topic:
+* /nodelet_manager/bond
+* to:
+* /nodelet_manager
+* (http://BLACKN:39143/)
+* direction:
+* inbound
+* transport:
+* TCPROS
+* topic:
+* /nodelet_manager/bond
+* to:
+* /nodelet2
+* (http://BLACKN:59846/)
+* direction:
+* inbound
+* transport:
+* TCPROS
+

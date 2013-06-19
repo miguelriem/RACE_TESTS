@@ -1,0 +1,178 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARCHITECTURE_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	193;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	196;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	199;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	202;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	206;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	181;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	184;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	187;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	190;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	194;"	d	file:
+CMAKE_BINARY_DIR	build/Makefile	/^CMAKE_BINARY_DIR = \/home\/mike\/workingcopy\/TESTS\/test_nodelets\/build$/;"	m
+CMAKE_COMMAND	build/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_SOURCE_DIR	build/Makefile	/^CMAKE_SOURCE_DIR = \/home\/mike\/workingcopy\/TESTS\/test_nodelets$/;"	m
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	10;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	13;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	16;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	19;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	22;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	25;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	28;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	32;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	34;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	36;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	40;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	43;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	46;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	49;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	52;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	55;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	58;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	61;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	66;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	77;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	80;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	86;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	89;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	92;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	12;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	15;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	18;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	21;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	24;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	27;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	30;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	34;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	36;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	38;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	42;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	45;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	48;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	51;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	54;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	57;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	60;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	65;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	68;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	74;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	77;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	80;"	d	file:
+COMPILER_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	9;"	d	file:
+ID_VOID_MAIN	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	104;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	107;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	110;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	113;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	116;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	119;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	122;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	125;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	128;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	131;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	134;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	137;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	140;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	146;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	149;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	152;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	155;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	158;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	161;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	164;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	167;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	170;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	173;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	176;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	179;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	182;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	101;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	104;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	107;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	110;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	113;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	116;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	119;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	122;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	125;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	128;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	134;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	137;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	140;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	143;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	146;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	149;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	152;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	155;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	158;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	161;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	164;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	167;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	170;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	92;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	95;"	d	file:
+PLATFORM_ID	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	98;"	d	file:
+PLUGINLIB_DECLARE_CLASS	src/test_nodelet1.cpp	/^	PLUGINLIB_DECLARE_CLASS(test_nodelet1_ns, test_nodelet1, test_nodelet1_ns::test_nodelet1, nodelet::Nodelet);$/;"	p	namespace:test_nodelet1_ns	file:	signature:(test_nodelet1_ns, test_nodelet1, test_nodelet1_ns::test_nodelet1, nodelet::Nodelet)
+PLUGINLIB_DECLARE_CLASS	src/test_nodelet1.cpp	/^	PLUGINLIB_DECLARE_CLASS(test_nodelet2_ns, test_nodelet2, test_nodelet2_ns::test_nodelet2, nodelet::Nodelet);$/;"	p	namespace:test_nodelet2_ns	file:	signature:(test_nodelet2_ns, test_nodelet2, test_nodelet2_ns::test_nodelet2, nodelet::Nodelet)
+RM	build/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+SHELL	build/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SUFFIXES	build/Makefile	/^SUFFIXES =$/;"	m
+callback	src/test_nodelet1.cpp	/^			void callback(const sensor_msgs::PointCloud2::ConstPtr& input)$/;"	f	class:test_nodelet1_ns::test_nodelet1	file:	access:private	signature:(const sensor_msgs::PointCloud2::ConstPtr& input)
+callback	src/test_nodelet1.cpp	/^			void callback(const sensor_msgs::PointCloud2::ConstPtr& input)$/;"	f	class:test_nodelet2_ns::test_nodelet2	file:	access:private	signature:(const sensor_msgs::PointCloud2::ConstPtr& input)
+info_arch	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
+info_arch	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
+info_compiler	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v
+info_compiler	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v
+info_platform	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v
+info_platform	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v
+main	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+main	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
+main	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	signature:(int argc, char* argv[])
+onInit	src/test_nodelet1.cpp	/^			virtual void onInit() \/\/mandatory method for nodelet manager to call$/;"	f	class:test_nodelet1_ns::test_nodelet1	file:	access:private	signature:()
+onInit	src/test_nodelet1.cpp	/^			virtual void onInit() \/\/mandatory method for nodelet manager to call$/;"	f	class:test_nodelet2_ns::test_nodelet2	file:	access:private	signature:()
+output	src/test_nodelet1.cpp	/^				sensor_msgs::PointCloud2::Ptr output(new sensor_msgs::PointCloud2());$/;"	p	file:	signature:(new sensor_msgs::PointCloud2())
+output_noptr	src/test_nodelet1.cpp	/^				sensor_msgs::PointCloud2 output_noptr;$/;"	l
+private_nh	src/test_nodelet1.cpp	/^				ros::NodeHandle& private_nh = getPrivateNodeHandle();$/;"	l
+pub	src/test_nodelet1.cpp	/^			ros::Publisher pub;$/;"	m	class:test_nodelet1_ns::test_nodelet1	file:	access:private
+pub	src/test_nodelet1.cpp	/^			ros::Publisher pub;$/;"	m	class:test_nodelet2_ns::test_nodelet2	file:	access:private
+publish	src/test_nodelet1.cpp	/^				pub.publish(output);$/;"	p	file:	signature:(output)
+publish	src/test_nodelet1.cpp	/^				pub.publish(output_noptr);$/;"	p	file:	signature:(output_noptr)
+require	build/CMakeFiles/CompilerIdC/CMakeCCompilerId.c	/^  int require = 0;$/;"	l
+require	build/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  int require = 0;$/;"	l
+sub	src/test_nodelet1.cpp	/^			ros::Subscriber sub;$/;"	m	class:test_nodelet1_ns::test_nodelet1	file:	access:private
+sub	src/test_nodelet1.cpp	/^			ros::Subscriber sub;$/;"	m	class:test_nodelet2_ns::test_nodelet2	file:	access:private
+test_nodelet1	src/test_nodelet1.cpp	/^			test_nodelet1(): value_(0){} \/\/empty constructor  $/;"	f	class:test_nodelet1_ns::test_nodelet1	access:public	signature:()
+test_nodelet1	src/test_nodelet1.cpp	/^	class test_nodelet1 : public nodelet::Nodelet$/;"	c	namespace:test_nodelet1_ns	file:	inherits:nodelet::Nodelet
+test_nodelet1_ns	src/test_nodelet1.cpp	/^namespace test_nodelet1_ns$/;"	n	file:
+test_nodelet1_ns::PLUGINLIB_DECLARE_CLASS	src/test_nodelet1.cpp	/^	PLUGINLIB_DECLARE_CLASS(test_nodelet1_ns, test_nodelet1, test_nodelet1_ns::test_nodelet1, nodelet::Nodelet);$/;"	p	namespace:test_nodelet1_ns	file:	signature:(test_nodelet1_ns, test_nodelet1, test_nodelet1_ns::test_nodelet1, nodelet::Nodelet)
+test_nodelet1_ns::test_nodelet1	src/test_nodelet1.cpp	/^	class test_nodelet1 : public nodelet::Nodelet$/;"	c	namespace:test_nodelet1_ns	file:	inherits:nodelet::Nodelet
+test_nodelet1_ns::test_nodelet1::callback	src/test_nodelet1.cpp	/^			void callback(const sensor_msgs::PointCloud2::ConstPtr& input)$/;"	f	class:test_nodelet1_ns::test_nodelet1	file:	access:private	signature:(const sensor_msgs::PointCloud2::ConstPtr& input)
+test_nodelet1_ns::test_nodelet1::onInit	src/test_nodelet1.cpp	/^			virtual void onInit() \/\/mandatory method for nodelet manager to call$/;"	f	class:test_nodelet1_ns::test_nodelet1	file:	access:private	signature:()
+test_nodelet1_ns::test_nodelet1::output_noptr	src/test_nodelet1.cpp	/^				sensor_msgs::PointCloud2 output_noptr;$/;"	l
+test_nodelet1_ns::test_nodelet1::private_nh	src/test_nodelet1.cpp	/^				ros::NodeHandle& private_nh = getPrivateNodeHandle();$/;"	l
+test_nodelet1_ns::test_nodelet1::pub	src/test_nodelet1.cpp	/^			ros::Publisher pub;$/;"	m	class:test_nodelet1_ns::test_nodelet1	file:	access:private
+test_nodelet1_ns::test_nodelet1::publish	src/test_nodelet1.cpp	/^				pub.publish(output_noptr);$/;"	p	file:	signature:(output_noptr)
+test_nodelet1_ns::test_nodelet1::sub	src/test_nodelet1.cpp	/^			ros::Subscriber sub;$/;"	m	class:test_nodelet1_ns::test_nodelet1	file:	access:private
+test_nodelet1_ns::test_nodelet1::test_nodelet1	src/test_nodelet1.cpp	/^			test_nodelet1(): value_(0){} \/\/empty constructor  $/;"	f	class:test_nodelet1_ns::test_nodelet1	access:public	signature:()
+test_nodelet1_ns::test_nodelet1::value_	src/test_nodelet1.cpp	/^			double value_;$/;"	m	class:test_nodelet1_ns::test_nodelet1	file:	access:private
+test_nodelet2	src/test_nodelet1.cpp	/^			test_nodelet2(): value_(0){} \/\/empty constructor  $/;"	f	class:test_nodelet2_ns::test_nodelet2	access:public	signature:()
+test_nodelet2	src/test_nodelet1.cpp	/^	class test_nodelet2 : public nodelet::Nodelet$/;"	c	namespace:test_nodelet2_ns	file:	inherits:nodelet::Nodelet
+test_nodelet2_ns	src/test_nodelet1.cpp	/^namespace test_nodelet2_ns$/;"	n	file:
+test_nodelet2_ns::PLUGINLIB_DECLARE_CLASS	src/test_nodelet1.cpp	/^	PLUGINLIB_DECLARE_CLASS(test_nodelet2_ns, test_nodelet2, test_nodelet2_ns::test_nodelet2, nodelet::Nodelet);$/;"	p	namespace:test_nodelet2_ns	file:	signature:(test_nodelet2_ns, test_nodelet2, test_nodelet2_ns::test_nodelet2, nodelet::Nodelet)
+test_nodelet2_ns::test_nodelet2	src/test_nodelet1.cpp	/^	class test_nodelet2 : public nodelet::Nodelet$/;"	c	namespace:test_nodelet2_ns	file:	inherits:nodelet::Nodelet
+test_nodelet2_ns::test_nodelet2::callback	src/test_nodelet1.cpp	/^			void callback(const sensor_msgs::PointCloud2::ConstPtr& input)$/;"	f	class:test_nodelet2_ns::test_nodelet2	file:	access:private	signature:(const sensor_msgs::PointCloud2::ConstPtr& input)
+test_nodelet2_ns::test_nodelet2::onInit	src/test_nodelet1.cpp	/^			virtual void onInit() \/\/mandatory method for nodelet manager to call$/;"	f	class:test_nodelet2_ns::test_nodelet2	file:	access:private	signature:()
+test_nodelet2_ns::test_nodelet2::output	src/test_nodelet1.cpp	/^				sensor_msgs::PointCloud2::Ptr output(new sensor_msgs::PointCloud2());$/;"	p	file:	signature:(new sensor_msgs::PointCloud2())
+test_nodelet2_ns::test_nodelet2::private_nh	src/test_nodelet1.cpp	/^				ros::NodeHandle& private_nh = getPrivateNodeHandle();$/;"	l
+test_nodelet2_ns::test_nodelet2::pub	src/test_nodelet1.cpp	/^			ros::Publisher pub;$/;"	m	class:test_nodelet2_ns::test_nodelet2	file:	access:private
+test_nodelet2_ns::test_nodelet2::publish	src/test_nodelet1.cpp	/^				pub.publish(output);$/;"	p	file:	signature:(output)
+test_nodelet2_ns::test_nodelet2::sub	src/test_nodelet1.cpp	/^			ros::Subscriber sub;$/;"	m	class:test_nodelet2_ns::test_nodelet2	file:	access:private
+test_nodelet2_ns::test_nodelet2::test_nodelet2	src/test_nodelet1.cpp	/^			test_nodelet2(): value_(0){} \/\/empty constructor  $/;"	f	class:test_nodelet2_ns::test_nodelet2	access:public	signature:()
+test_nodelet2_ns::test_nodelet2::value_	src/test_nodelet1.cpp	/^			double value_;$/;"	m	class:test_nodelet2_ns::test_nodelet2	file:	access:private
+value_	src/test_nodelet1.cpp	/^			double value_;$/;"	m	class:test_nodelet1_ns::test_nodelet1	file:	access:private
+value_	src/test_nodelet1.cpp	/^			double value_;$/;"	m	class:test_nodelet2_ns::test_nodelet2	file:	access:private

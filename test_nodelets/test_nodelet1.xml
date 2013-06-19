@@ -1,0 +1,15 @@
+<library path="lib/libtest_nodelet1">                                                                                                             		<class name="test_nodelet1_ns/test_nodelet1" type="test_nodelet1_ns::test_nodelet1" base_class_type="nodelet::Nodelet">
+		<description> 
+			A test
+		</description>
+	</class>
+</library>
+<library path="lib/libtest_nodelet2">
+	<class name="test_nodelet2_ns/test_nodelet2" type="test_nodelet2_ns::test_nodelet2" base_class_type="nodelet::Nodelet">
+		<description> 
+			A test
+		</description>
+	</class>
+</library>
+
+

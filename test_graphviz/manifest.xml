@@ -1,0 +1,16 @@
+<package>
+  <description brief="test_graphviz">
+
+     test_graphviz
+
+  </description>
+  <author>MiguelOliveira</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/test_graphviz</url>
+
+<depend package="roscpp"/>
+<depend package="std_msgs"/>
+</package>
+
+
