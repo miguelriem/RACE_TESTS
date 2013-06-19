@@ -16,7 +16,7 @@ run roscore
 >> roscore
 
 Launch nodelet manager
->> rosrun nodelet nodelet load test_nodelet1_ns/test_nodelet1 nodelet_manager __name:=nodelet1
+>> run nodelet nodelet manager __name:=nodelet_manager
 
 Launch nodelet1 
 >> rosrun nodelet nodelet load test_nodelet1_ns/test_nodelet1 nodelet_manager __name:=nodelet1
