@@ -5,7 +5,31 @@
 \b test_nodelets 
 
 <!-- 
-Provide an overview of your package.
+This is the test nodlets with level db
+
+How to run:
+
+Instructions at http://www.ros.org/wiki/nodelet/Tutorials/Running%20a%20nodelet
+In detail: 
+
+run roscore
+>> roscore
+
+Launch nodelet manager
+>> rosrun nodelet nodelet load test_nodelet1_ns/test_nodelet1 nodelet_manager __name:=nodelet1
+
+Launch nodelet1 
+>> rosrun nodelet nodelet load test_nodelet1_ns/test_nodelet1 nodelet_manager __name:=nodelet1
+
+Launch nodelet2
+>> rosrun nodelet nodelet load test_nodelet2_ns/test_nodelet2 nodelet_manager __name:=nodelet2
+
+Now Db was created but everything is stalled because no point cloud is received.
+
+To publish a pc do
+rosbag play {bag file containing point clouds on topic /camera/depth_registered/points} -l
+>> rosbag play pointcloud.bag -l
+
 -->
 
 -->
