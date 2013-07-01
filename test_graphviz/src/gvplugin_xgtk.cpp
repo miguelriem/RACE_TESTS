@@ -101,7 +101,7 @@ GtkWidget*create_window(void)
 
 	drawingarea = gtk_drawing_area_new ();
 	gtk_widget_show (drawingarea);	
-	gtk_widget_set_size_request (drawingarea, 800, 800);
+	gtk_widget_set_size_request (drawingarea, 1200, 1200);
 	gtk_container_add (GTK_CONTAINER (window), drawingarea);
 
 	g_signal_connect ((gpointer) window, "delete_event",G_CALLBACK (WindowDeleteEvent),NULL);
