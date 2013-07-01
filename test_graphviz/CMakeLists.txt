@@ -58,9 +58,6 @@ endif()
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
-
-rosbuild_add_executable(test_graphviz src/main.cpp)
-
 SET(XGTK_PLUGIN gvplugin_xgtk)
 include_directories(${GTK2_INCLUDE_DIRS})
 include_directories(${GRAPHVIZ_INCLUDE_DIR})
@@ -69,7 +66,15 @@ rosbuild_add_library(${XGTK_PLUGIN} src/gvplugin_xgtk.cpp src/callbacks_mht.cpp	
 target_link_libraries(${XGTK_PLUGIN} ${GRAPHVIZ_GVC_LIBRARY} ${GRAPHVIZ_GRAPH_LIBRARY} ${GTK2_LIBRARIES})
 
 
+rosbuild_add_executable(test_graphviz src/main.cpp)
 target_link_libraries(test_graphviz ${XGTK_PLUGIN})
+rosbuild_add_executable(race_perception_soft_architecture src/race_perception_soft_architecture.cpp)
+target_link_libraries(race_perception_soft_architecture ${XGTK_PLUGIN})
+target_link_libraries(race_perception_soft_architecture boost_regex)
+target_link_libraries(race_perception_soft_architecture boost_graph)
+
+
+
 
 #rosbuild_add_library(munkres src/munkres.cpp src/matrix.cpp
 #src/k_best.cpp)

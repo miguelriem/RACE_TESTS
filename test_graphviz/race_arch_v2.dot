@@ -1,0 +1,326 @@
+digraph html {
+	splines=spline;
+	nodesep=0.3;
+	ranksep=0.2;
+	//esep=0.5;
+	//rankdir=TB;
+	//rankdir=LR;
+	//size="10,16";
+	//center=true;
+		//compound=true;
+
+//SP [rank=same, shape=none, margin=0 label=<
+//<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+//<TR>
+//<TD WIDTH="10%" BGCOLOR="springgreen" PORT="Sensors">Sensors</TD>
+//</TR>
+//<TR><TD WIDTH="100%" BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="50">Scene Perception</TD>
+//</TR>
+//<TR>
+//<TD BGCOLOR="indianred1" PORT="Sensor Data">Sensor Data</TD>
+//</TR>
+//</TABLE>>];
+
+LDB [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="cadetblue2" PORT="ORLabel2">Repres</TD>
+<TD BGCOLOR="khaki" COLSPAN="1"> </TD> 
+<TD BGCOLOR="cadetblue" PORT="Obj Models">Obj Models</TD>
+</TR>
+<TR>
+<TD BGCOLOR="cadetblue2" PORT="ORLabel2">ORLabel</TD>
+<TD BGCOLOR="khaki" COLSPAN="1" PORT="here" >Database</TD>
+</TR>
+<TR>
+<TD BGCOLOR="cadetblue2" PORT="ORLabel2">OALabel</TD>
+<TD BGCOLOR="khaki" COLSPAN="1"> </TD> 
+</TR>
+<TR>
+<TD BGCOLOR="cadetblue2" PORT="Obj Models">Obj Models</TD>
+<TD BGCOLOR="khaki" COLSPAN="1"> </TD> 
+</TR>
+</TABLE>>];
+
+OD [rank=same, shape=none, margin=0 label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD></TD>
+<TD WIDTH="10%" BGCOLOR="springgreen" PORT="BBox">BBox</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD WIDTH="10%" BGCOLOR="springgreen" PORT="Pos">Position</TD>
+</TR>
+<TR>
+<TD BGCOLOR="azure4" PORT="Sensor Data">Sensor Data</TD>
+<TD WIDTH="10%" BGCOLOR="springgreen" PORT="TrackID">TrackID</TD>
+</TR>
+<TR><TD WIDTH="100%" BGCOLOR="khaki" COLSPAN="2" PORT="here" HEIGHT="50">Object Detection</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="OD3">New Obj_i</TD>
+</TR>
+</TABLE>>];
+
+OT [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="azure4" PORT="Sensor Data">Sensor Data</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="3" PORT="here" HEIGHT="50">Object Tracking</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="BBox">BBox</TD>
+<TD BGCOLOR="indianred1" PORT="PCloud">PCloud</TD>
+<TD BGCOLOR="indianred1" PORT="Pos">Position</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="Pos">Position</TD>
+<TD BGCOLOR="indianred1" PORT="TrackID2">TrackID</TD>
+<TD BGCOLOR="indianred1" PORT="TrackID3">TrackID</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="TrackID">TrackID</TD>
+</TR>
+</TABLE>>];
+
+NM [rank=same,shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="springgreen" PORT="IP1">New Obj_i</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="50">Nodelet Manager</TD>
+</TR>
+<TR>
+<TD BGCOLOR="azure4" PORT="LaunchNodelets">Launch new Pipeline</TD>
+</TR>
+</TABLE>>];
+
+//subgraph cluster_1 {
+//node [style=filled];
+//label = "Databases";
+//color=blue
+
+
+BB [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD></TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="OALabel">OALabel</TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="ObjID">ObjID</TD>
+<TD BGCOLOR="springgreen" PORT="UILabel">UILabel</TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="OutPos">Position</TD>
+<TD BGCOLOR="springgreen" PORT="ObjID1">ObjID</TD>
+</TR>
+<TR>
+<TD BGCOLOR="khaki" COLSPAN="2"> </TD>
+</TR>
+<TR>
+<TD BGCOLOR="khaki" COLSPAN="2" PORT="here">Black Board</TD>
+</TR>
+<TR>
+<TD BGCOLOR="khaki" COLSPAN="2"> </TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="ObjID">ObjID</TD>
+<TD BGCOLOR="indianred1" PORT="OutObjID">ObjID</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="OutUILabel">UILabel</TD>
+<TD BGCOLOR="indianred1" PORT="OutPosition">Position</TD>
+</TR>
+
+</TABLE>>];
+//}
+
+
+FE [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="springgreen" PORT="PCloud">PCloud</TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="InTrackID">TrackID</TD>
+</TR>
+<TR>
+<TD BGCOLOR="khaki" COLSPAN="1"> </TD> 
+<TD BGCOLOR="cadetblue" PORT="">Repres</TD>
+</TR>
+<TR>
+<TD BGCOLOR="khaki" COLSPAN="1" PORT="here">Feature Extraction</TD>
+</TR>
+<TR>
+<TD BGCOLOR="khaki" COLSPAN="1"> </TD> 
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="OutTrackID">TrackID</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="Repres">Repres</TD>
+</TR>
+</TABLE>
+>];
+
+OR [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD></TD>
+<TD BGCOLOR="springgreen" PORT="TrackID">TrackID</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD BGCOLOR="springgreen" PORT="Repres">Repres</TD>
+</TR>
+<TR>
+<TD BGCOLOR="cadetblue2" PORT="Obj Models">Obj Models</TD>
+<TD BGCOLOR="khaki" COLSPAN="1"> </TD> 
+<TD BGCOLOR="cadetblue" PORT="ORLabel2">ORLabel</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD BGCOLOR="khaki" COLSPAN="1" PORT="here" >Object Recognition</TD>
+</TR>
+<TR>
+<TD></TD> 
+<TD BGCOLOR="khaki" COLSPAN="1"> </TD> 
+</TR>
+<TR>
+<TD></TD>
+<TD BGCOLOR="indianred1" PORT="ORLabel">ORLabel</TD>
+</TR>
+</TABLE>>];
+
+OA [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD></TD>
+<TD BGCOLOR="springgreen" PORT="Pos">Position</TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="ORLabel">ORLabel</TD>
+<TD BGCOLOR="springgreen" PORT="TrackID">TrackID</TD>
+</TR>
+<TR>
+<TD BGCOLOR="khaki" COLSPAN="2"> </TD>
+<TD BGCOLOR="cadetblue" PORT="OALabel2">OALabel</TD>
+</TR>
+<TR>
+<TD BGCOLOR="khaki" COLSPAN="2" PORT="here">Object Anchoring</TD>
+</TR>
+<TR>
+<TD BGCOLOR="khaki" COLSPAN="2"> </TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="OALabel">OALabel</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="ObjID">ObjID</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="OutPos">Position</TD>
+</TR>
+</TABLE>>];
+
+OC [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD></TD>
+<TD BGCOLOR="springgreen" PORT="ObjID">ObjID</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD BGCOLOR="springgreen" PORT="UILabel">UILabel</TD>
+</TR>
+<TR>
+<TD BGCOLOR="cadetblue2" PORT="InObj Models">Obj Models</TD>
+<TD BGCOLOR="khaki" COLSPAN="1"> </TD>
+<TD BGCOLOR="cadetblue" PORT="InObj Models">Obj Models</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD BGCOLOR="khaki" COLSPAN="1" PORT="here">Object Conceptualizer</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD BGCOLOR="khaki" COLSPAN="1"> </TD>
+</TR>
+<TR>
+<TD></TD>
+</TR>
+</TABLE>>];
+
+UI [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD></TD>
+<TD BGCOLOR="springgreen" PORT="InObjID">ObjID</TD>
+</TR>
+<TR>
+<TD BGCOLOR="azure4" PORT="Sensor Data">Sensor Data</TD>
+<TD BGCOLOR="springgreen" PORT="Pos">Position</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="2" PORT="here" HEIGHT="50">User Interface</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="UILabel">UILabel</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="ObjID">ObjID</TD>
+</TR>
+</TABLE>>];
+
+//Edges
+subgraph cluster_0 {
+node [style=filled];
+label = "Multiplexed Pipeline for each Obj TrackID";
+color=black
+OT -> FE [headport="PCloud" tailport="TrackID2" label="" fontsize="8" color="black"];
+//OT -> FE [headport="PCloud" tailport="PCloud" label="" fontsize="8" color="black"];
+FE -> OR [headport="TrackID" tailport="Repres" label="" fontsize="8" color="black"];
+//FE -> OR [headport="Repres" tailport="Repres" label="" fontsize="8" color="black"];
+}
+
+
+OT -> OD [headport="BBox" tailport="TrackID" label="" fontsize="8" constraint="false" color="black" weight="140"];
+//OT -> OD [headport="Pos" tailport="Pos" label="" fontsize="8" constraint="false" color="black" weight="140"];
+//OT -> OD [headport="TrackID" tailport="TrackID" label="" fontsize="8" constraint="false" weight="140" color="black"];
+//OT -> OD [headport="BBox" tailport="BBox" label="" fontsize="8" constraint="false" color="black" pos="40,40" weight="140"];
+
+OT -> OA [headport="Pos" tailport="TrackID3" label="" fontsize="8" constraint="false" color="black"];
+//OT -> OA [headport="Pos" tailport="Pos" label="" fontsize="8" constraint="false" color="black"];
+
+OD -> NM [headport="IP1" tailport="OD3" label="" fontsize="8" constraint="true"
+	color="green" weight="50"];
+//FE -> LDB [tailport="Repres1" label="" fontsize="8" constraint="false" color="red"];
+//OR -> LDB [tailport="ORLabel" label="" fontsize="8" constraint="false" color="red"];
+//LDB -> OR [headport="Obj Models" label="" fontsize="8" constraint="false" color="red"];
+//NM -> OT [label="" fontsize="8" color="magenta"
+//constraint="false"];
+//NM -> FE [label="" fontsize="8" color="magenta" constraint="false"];
+//NM -> OR [label="" fontsize="8" color="magenta" constraint="false"];
+
+OR -> OA [headport="ORLabel" tailport="ORLabel" label="" fontsize="8"
+constraint="false" color="black"];
+//OA -> LDB [tailport="OALabel" label="" fontsize="8"	color="red" constraint="false"];
+//OC -> LDB [tailport="OutObj Models" label="" fontsize="8" color="red" constraint="false"];
+//LDB -> OC [headport="InObj Models" label="" fontsize="8" color="red" constraint="false"];
+//SP -> OD [headport="Sensor Data" tailport="Sensor Data" label="" fontsize="8" constraint="true" color="black"];
+//SP -> OT [headport="Sensor Data" tailport="Sensor Data" label="" fontsize="8" constraint="false" color="black"];
+//OA -> BB [tailport="OALabel" label="" fontsize="8" color="red" constraint="false"];
+//OA -> BB [tailport="ObjID" label="" fontsize="8" color="red" constraint="false"];
+OA -> BB [tailport="OutPos" headport="OALabel" label="" fontsize="8"
+color="black" constraint="true"];
+//SP -> UI [headport="Sensor Data" tailport="Sensor Data" label="" fontsize="8" constraint="false" color="black" spline="spline"];
+BB -> UI [tailport="OutPosition" headport="Pos" label="" fontsize="8" color="black" constraint="false"];
+UI -> BB [tailport="ObjID" headport="UILabel" label="" fontsize="8" color="black" constraint="true"];
+//BB -> OC [headport="UILabel" label="" fontsize="8" color="black" constraint="false"];
+BB -> OC [headport="ObjID" tailport="OutUILabel" label="" fontsize="8" constraint="true" color="black" weight="50"];
+
+}

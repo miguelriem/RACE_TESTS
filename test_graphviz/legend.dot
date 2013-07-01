@@ -1,0 +1,119 @@
+digraph html {
+	splines=spline;
+	nodesep=0.3;
+	ranksep=0.8;
+	//esep=0.5;
+	//rankdir=TB;
+	//rankdir=LR;
+	//size="10,16";
+	//center=true;
+		//compound=true;
+
+//SP [rank=same, shape=none, margin=0 label=<
+//<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+//<TR>
+//<TD WIDTH="10%" BGCOLOR="springgreen" PORT="Sensors">Sensors</TD>
+//</TR>
+//<TR><TD WIDTH="100%" BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="50">Scene Perception</TD>
+//</TR>
+//<TR>
+//<TD BGCOLOR="indianred1" PORT="Sensor Data">Sensor Data</TD>
+//</TR>
+//</TABLE>>];
+
+
+OR [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD></TD>
+<TD></TD>
+<TD BGCOLOR="springgreen" PORT="">MsgIn1 f[1]</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD></TD>
+<TD BGCOLOR="springgreen" PORT="">MsgIn1 f[2]</TD>
+<TD BGCOLOR="springgreen" PORT="PPP">SrvRequest1 f[1]</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD BGCOLOR="azure4" PORT="Sensor Data">ExtData f[1]</TD>
+<TD BGCOLOR="springgreen" PORT="">MsgIn1 f[3]</TD>
+<TD BGCOLOR="springgreen" PORT="">SrvRequest1 f[2]</TD>
+</TR>
+<TR>
+<TD BGCOLOR="cadetblue2" PORT="Obj Models">DB query 1</TD>
+<TD BGCOLOR="khaki" COLSPAN="4"> </TD> 
+<TD BGCOLOR="cadetblue" PORT="ORLabel2">DB set 1</TD>
+</TR>
+<TR>
+<TD BGCOLOR="cadetblue2" PORT="Obj Models"> DB query 2 </TD>
+<TD BGCOLOR="khaki" COLSPAN="4" PORT="here" >Node(let) Name</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD BGCOLOR="khaki" COLSPAN="4"> </TD> 
+</TR>
+<TR>
+<TD></TD>
+<TD BGCOLOR="indianred1" PORT="ORLabel">MsgOut1 f[1]</TD>
+<TD BGCOLOR="indianred1" PORT="PSRV">SrvResponse1 f[1]</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD BGCOLOR="indianred1" PORT="P1">MsgOut1 f[2]</TD>
+</TR>
+</TABLE>>];
+
+DUMMY1 [rank=same,shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="springgreen" PORT="P1">MsgOut1 f[1]</TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="IP1">MsgOut1 f[2]</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="50">Node(let) Name</TD>
+</TR>
+</TABLE>>];
+
+DUMMY2 [rank=same,shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="springgreen" PORT="P1">SrvResponse1 f[1]</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="50">Node(let) Name</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="P1">SrvRequest1 f[1]</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="PPP">SrvRequest1 f[2]</TD>
+</TR>
+</TABLE>>];
+
+LDB [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="cadetblue2" PORT="ORLabel2">DB set 1</TD>
+<TD BGCOLOR="khaki" COLSPAN="1"> </TD> 
+<TD BGCOLOR="cadetblue" PORT="Obj Models">DB query 1</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD BGCOLOR="khaki" COLSPAN="1" PORT="here" >Database</TD>
+<TD BGCOLOR="cadetblue" PORT="Obj Models">DB query 2</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD BGCOLOR="khaki" COLSPAN="1"> </TD> 
+</TR>
+</TABLE>>];
+
+//EDEGES
+OR -> DUMMY1 [tailport="P1" headport="P1" label="ROS Topic MsgOut2 \nwith\nMsg {f[1],f[2]}" color="black"
+	constraint="true"];
+OR -> DUMMY2 [tailport="PSRV" headport="P1" label="ROS SrvResponse SrvResponse1 \nwith\nResponse {f[1]}" color="green" constraint="true"];
+DUMMY2 -> OR [tailport="PPP" headport="PPP" label="ROS SrvRequest SrvRequest1\nwith\nRequest {f[1], f[2]}" color="green" constraint="false" weight="1"];
+
+}

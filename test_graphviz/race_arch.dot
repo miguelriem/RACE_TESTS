@@ -1,0 +1,207 @@
+digraph html {
+	splines=spline;
+	nodesep=0.5;
+	ranksep=1.8;
+	//esep=0.5;
+	//rankdir=TB;
+	//rankdir=LR;
+	//size="10,16";
+	center=true;
+		compound=true;
+
+SP [rank=same, shape=none, margin=0 label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD WIDTH="10%" BGCOLOR="springgreen" PORT="Sensors">Sensors</TD>
+</TR>
+<TR><TD WIDTH="100%" BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="70">Scene Perception</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="Scene PCloud">Scene PCloud</TD>
+</TR>
+</TABLE>>];
+
+OD [rank=same, shape=none, margin=0 label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="springgreen" PORT="Scene PCloud">Scene PCloud</TD>
+<TD WIDTH="10%" BGCOLOR="springgreen" PORT="BBox">BBox</TD>
+<TD WIDTH="10%" BGCOLOR="springgreen" PORT="Pos">Position</TD>
+<TD WIDTH="10%" BGCOLOR="springgreen" PORT="TrackID">TrackID</TD>
+</TR>
+<TR><TD WIDTH="100%" BGCOLOR="khaki" COLSPAN="4" PORT="here" HEIGHT="70">Object Detection</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="OD3">New Obj_i</TD>
+</TR>
+</TABLE>>];
+
+OT [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="springgreen" PORT="Scene PCloud">Scene PCloud</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="4" PORT="here" HEIGHT="70">Object Tracking</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="BBox">BBox</TD>
+<TD BGCOLOR="indianred1" PORT="Pos">Position</TD>
+<TD BGCOLOR="indianred1" PORT="TrackID">TrackID</TD>
+<TD BGCOLOR="indianred1" PORT="PCloud">PCloud</TD>
+</TR>
+</TABLE>>];
+
+NM [rank=same,shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="springgreen" PORT="IP1">New Obj_i</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="70">Nodelet Manager</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="LaunchNodelets">LaunchNodelets</TD>
+</TR>
+</TABLE>>];
+
+subgraph cluster_1 {
+node [style=filled];
+label = "Databases";
+color=blue
+
+LDB [rank=min, shape=ellipse, margin=0, label="DB" fillcolor="springgreen" width=2
+	height=1.1];
+
+BB [rank=min, shape=ellipse, margin=0, label="BB" fillcolor="springgreen" width=2
+	height=1.1];
+}
+
+
+FE [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="springgreen" PORT="InTrackID">TrackID</TD>
+<TD BGCOLOR="springgreen" PORT="PCloud">PCloud</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="2" PORT="here" HEIGHT="70">Feature Extraction</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="OutTrackID">TrackID</TD>
+<TD BGCOLOR="indianred1" PORT="Repres">Repres</TD>
+</TR>
+</TABLE>>];
+
+OR [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="springgreen" PORT="TrackID">TrackID</TD>
+<TD BGCOLOR="springgreen" PORT="Repres">Repres</TD>
+<TD BGCOLOR="springgreen" PORT="Obj Models">Obj Models</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="3" PORT="here" HEIGHT="70">Object Recognition</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="ORLabel">ORLabel</TD>
+</TR>
+</TABLE>>];
+
+OA [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="springgreen" PORT="ORLabel">ORLabel</TD>
+<TD BGCOLOR="springgreen" PORT="TrackID">TrackID</TD>
+<TD BGCOLOR="springgreen" PORT="Pos">Position</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="3" PORT="here" HEIGHT="70">Object Anchoring</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="OALabel">OALabel</TD>
+<TD BGCOLOR="indianred1" PORT="ObjID">ObjID</TD>
+<TD BGCOLOR="indianred1" PORT="OutPos">Position</TD>
+</TR>
+</TABLE>>];
+
+OC [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="springgreen" PORT="InObj Models">Obj Models</TD>
+<TD BGCOLOR="springgreen" PORT="UILabel">UILabel</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="2" PORT="here" HEIGHT="70">Object Conceptualizer</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="OutObj Models">Obj Models</TD>
+</TR>
+</TABLE>>];
+
+UI [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD BGCOLOR="springgreen" PORT="Pos">Position</TD>
+<TD BGCOLOR="springgreen" PORT="Scene PCloud">Scene PCloud</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="2" PORT="here" HEIGHT="70">User Interface</TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="UILabel">UILabel</TD>
+</TR>
+</TABLE>>];
+
+//Edges
+subgraph cluster_0 {
+node [style=filled];
+label = "Multiplexed Pipeline for each Obj TrackID";
+color=blue
+OT -> FE [headport="InTrackID" tailport="TrackID" label="" fontsize="8"
+	color="blue"];
+OT -> FE [headport="PCloud" tailport="PCloud" label="" fontsize="8"
+	color="blue"];
+FE -> OR [headport="TrackID" tailport="OutTrackID" label="" fontsize="8"
+	color="blue"];
+FE -> OR [headport="Repres" tailport="Repres" label="" fontsize="8"
+	color="blue"];
+}
+
+
+OT -> OD [headport="Pos" tailport="Pos" label="" fontsize="8" constraint="false" color="blue" weight="140"];
+OT -> OD [headport="TrackID" tailport="TrackID" label="" fontsize="8" constraint="false" weight="140" color="blue"];
+OT -> OD [headport="BBox" tailport="BBox" label="" fontsize="8" constraint="false" color="blue" pos="40,40" weight="140"];
+
+OT -> OA [headport="TrackID" tailport="TrackID" label="" fontsize="8" constraint="false"
+	color="blue"];
+OT -> OA [headport="Pos" tailport="Pos" label="" fontsize="8" constraint="false"
+	color="blue"];
+
+OD -> NM [headport="IP1" tailport="OD3" label="" fontsize="8" constraint="true"
+	color="green" weight="50"];
+FE -> LDB [tailport="Repres" label="" fontsize="8" constraint="false"
+	color="red"];
+OR -> LDB [tailport="ORLabel" label="" fontsize="8" constraint="false"
+	color="red"];
+LDB -> OR [headport="Obj Models" label="" fontsize="8" constraint="false"
+	color="red"];
+//NM -> OT [label="" fontsize="8" color="magenta"
+//constraint="false"];
+//NM -> FE [label="" fontsize="8" color="magenta" constraint="false"];
+//NM -> OR [label="" fontsize="8" color="magenta" constraint="false"];
+
+OR -> OA [headport="ORLabel" tailport="ORLabel" label=""
+fontsize="8" constraint="true" color="blue"];
+OA -> LDB [tailport="OALabel" label="" fontsize="8"
+	color="red"];
+OC -> LDB [tailport="OutObj Models" label="" fontsize="8" color="red" constraint="false"];
+LDB -> OC [headport="InObj Models" label="" fontsize="8"
+	color="red"];
+SP -> OD [headport="Scene PCloud" tailport="Scene PCloud" label="" fontsize="8" constraint="true" color="blue"];
+SP -> OT [headport="Scene PCloud" tailport="Scene PCloud" label="" fontsize="8" constraint="false"
+	color="blue"];
+OA -> BB [tailport="OALabel" label="" fontsize="8" color="red" constraint="false"];
+OA -> BB [tailport="ObjID" label="" fontsize="8" color="red" constraint="false"];
+OA -> BB [tailport="OutPos" label="" fontsize="8" color="red" constraint="false"];
+SP -> UI [headport="Scene PCloud" tailport="Scene PCloud" label="" fontsize="8" constraint="false"
+	color="blue" spline="spline"];
+BB -> UI [headport="Pos" label="" fontsize="8" color="red" constraint="false"];
+UI -> BB [tailport="UILabel" label="" fontsize="8" color="red" constraint="false"];
+
+BB -> OC [headport="UILabel" label="" fontsize="8" color="blue" constraint="false"];
+
+}

@@ -1,0 +1,34 @@
+digraph html {
+OT [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+<TR>
+<TD BGCOLOR="springgreen" PORT="OT1">In 1</TD>
+<TD BGCOLOR="springgreen" PORT="OT2">In 2</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="3" PORT="here" HEIGHT="70"> <FONT size="6">Nodelet Names asdasdasdasda</FONT></TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="OT3">Out 1</TD>
+<TD BGCOLOR="indianred1" PORT="OT4">Out 2</TD>
+<TD BGCOLOR="indianred1" PORT="OT5">Out 3</TD>
+</TR>
+</TABLE>>];
+
+OD [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+<TR>
+<TD BGCOLOR="springgreen" PORT="OD1">In 1</TD>
+<TD BGCOLOR="springgreen" PORT="OD2">In 2</TD>
+</TR>
+<TR><TD BGCOLOR="khaki" COLSPAN="3" PORT="here" HEIGHT="70"> <FONT size="6">Nodelet Name</FONT></TD>
+</TR>
+<TR>
+<TD BGCOLOR="indianred1" PORT="OD3">Out 1</TD>
+<TD BGCOLOR="indianred1" PORT="OD4">Out 2</TD>
+<TD BGCOLOR="indianred1" PORT="OD5">Out 3</TD>
+</TR>
+</TABLE>>];
+
+//Edges
+OT -> OD [headport="OD1" tailport="OT5"];
+}

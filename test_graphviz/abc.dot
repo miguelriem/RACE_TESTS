@@ -1,0 +1,7 @@
+strict digraph g {
+	node [label="\N"];
+	graph [bb="0,0,54,112"];
+	n [color=red, pos="27,93", width="0.75", height="0.51389"];
+	m [pos="27,19", width="0.75", height="0.51389"];
+	n -> m [pos="e,27,37.667 27,74.327 27,66.264 27,56.648 27,47.711"];
+}

@@ -1,0 +1,98 @@
+digraph html {
+	nodesep=0.8;
+	ranksep=0.5;
+	slipnes=true;
+	rankdir=TB;
+
+
+
+
+LAS1 [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1">
+<TR><TD WIDTH="100%" BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="30">2D Laser 1</TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="OD3"> <FONT POINT-SIZE="10">PointCloud 2D</FONT></TD>
+</TR>
+</TABLE>>];
+
+LAS2 [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1">
+<TR><TD WIDTH="100%" BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="30">2D Laser 2</TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="OD3"> <FONT POINT-SIZE="10">PointCloud 2D</FONT></TD>
+</TR>
+</TABLE>>];
+
+Camera1 [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1">
+<TR><TD WIDTH="100%" BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="30">Camera 1</TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="OD3"> <FONT POINT-SIZE="10">Image</FONT></TD>
+</TR>
+</TABLE>>];
+
+Camera2 [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1">
+<TR><TD WIDTH="100%" BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="30">Camera 2</TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="OD3"> <FONT POINT-SIZE="10">Image</FONT></TD>
+</TR>
+</TABLE>>];
+
+
+StereoCamera1 [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1">
+<TR><TD WIDTH="100%" BGCOLOR="khaki" COLSPAN="2" PORT="here" HEIGHT="30">Stereo Camera 1</TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="OD6"> <FONT POINT-SIZE="10">Image</FONT></TD>
+<TD BGCOLOR="springgreen" PORT="OD3"> <FONT POINT-SIZE="10">PointCloud 3D</FONT></TD>
+</TR>
+</TABLE>>];
+
+ThermalCamera1 [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1">
+<TR><TD WIDTH="100%" BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="30">Thermal Camera 1</TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="OD3"> <FONT POINT-SIZE="10">Thermal Image</FONT></TD>
+</TR>
+</TABLE>>];
+
+
+Laser3D1 [shape=none, margin=0, root="true", label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1">
+<TR><TD WIDTH="100%" BGCOLOR="khaki" COLSPAN="1" PORT="here" HEIGHT="30">3D Laser 1</TD>
+</TR>
+<TR>
+<TD BGCOLOR="springgreen" PORT="OD3"> <FONT POINT-SIZE="10">PointCloud 3D</FONT></TD>
+</TR>
+</TABLE>>];
+
+DUMMY [shape=ellipse, margin=0, label="Eval1(PointCloud 2D, PointCloud 3D)"];
+DUMMY1 [shape=ellipse, margin=0, label="Eval2(Image, Thermal Image)"];
+
+
+//Edges
+Laser3D1 -> LAS1 [label=" T1" constraint="true"];
+Laser3D1 -> LAS2 [label=" T2"constraint="true"];
+Laser3D1 -> Camera1 [label=" T3"constraint="true"];
+Laser3D1 -> Camera2 [label=" T4"constraint="true"];
+Laser3D1 -> StereoCamera1 [label=" T5"constraint="true"];
+Laser3D1 -> ThermalCamera1 [label=" T6"constraint="true"];
+//Camera1 -> DUMMY [label="", style="invisible"]
+
+LAS1 -> DUMMY [label="" constraint="true" arrowtype="none"];
+DUMMY -> Camera2 [label="" constraint="false" arrowtype="none" pos="150,30"];
+
+
+StereoCamera1 -> DUMMY1 [label="" constraint="true" arrowtype="none"
+	tailport="OD6"];
+DUMMY1 -> ThermalCamera1 [label="" constraint="false" arrowtype="none"];
+//ThermalCamera1 -> StereoCamera1 [label="Eval(Image,Image)" constraint="false"];
+
+}

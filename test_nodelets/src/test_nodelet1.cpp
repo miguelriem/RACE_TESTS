@@ -14,6 +14,7 @@
 #include "leveldb/db.h"
 #include "PointerAddressUtils.h"
 #include "test_nodelets/get_db_address.h"
+#include <test_nodelets/StructSerialization.h>
 
 using namespace std;
 
@@ -112,6 +113,10 @@ namespace serialization
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/array.hpp> 
+
+#ifndef PFLN
+#define PFLN printf("L=%d of file: %s \n", __LINE__,__FILE__);
+#endif
 
 class myBClass
 {
@@ -244,6 +249,49 @@ namespace test_nodelet1_ns
 			{
 				static int i=0;
 
+				PFLN
+				//Declare msg
+				test_nodelets::StructSerialization our_msg;
+
+				PFLN
+				//Add stuff to msg
+				our_msg.string1 = "hello";
+				our_msg.vec_int1.push_back(100);
+				our_msg.vec_int1.push_back(101);
+				our_msg.vec_int1.push_back(102);
+
+				PFLN
+				//Serialize
+				uint32_t serial_size = ros::serialization::serializationLength(our_msg);
+				boost::shared_array<uint8_t> buffer(new uint8_t[serial_size]);
+				ros::serialization::OStream stream(buffer.get(), serial_size);
+				ros::serialization::serialize(stream, our_msg);	
+
+				PFLN
+				//WRITE Buffer TO DB
+
+
+				//Deserialization
+				uint32_t serial_size_des = ros::serialization::serializationLength(our_msg); //compute the msg size
+
+				PFLN
+				//Fill buffer with a serialized UInt32
+				ros::serialization::IStream stream_des(buffer.get(), serial_size_des); //Get a istream from buffer
+
+				PFLN
+				test_nodelets::StructSerialization our_msg_des; //declare a new msg to be filled by the deserialization procedure
+				ros::serialization::deserialize(stream_des, our_msg_des); //deserialize
+
+				PFLN
+					//print array values
+				ROS_INFO("string1=%s\nsize vec_int1=%ld", our_msg_des.string1.c_str(), our_msg_des.vec_int1.size());
+				for (size_t i=0; i<our_msg_des.vec_int1.size(); i++)
+				{
+					ROS_INFO("size vec_int1[%ld]=%ld", i,our_msg_des.vec_int1.at(i));
+				}
+
+				PFLN
+				return;
 //				ROS_INFO("The size of current point cloud is =%d", sizeof *input);
 //				ROS_INFO("The size of current point cloud data:height is =%d", input->height);
 //				ROS_INFO("The size of current point cloud data:row_step is =%d", input->row_step );
@@ -261,7 +309,7 @@ namespace test_nodelet1_ns
 				testPutIntArr(i);
 				testGetIntArr(i);
                 testBoostStr(i);
-                i++;
+                //i++;
 
 				//print everything on the db
 				ROS_INFO("from nodelet 1: full db keys");
@@ -283,18 +331,20 @@ namespace test_nodelet1_ns
 
                 int tmp[arr_size]; 
                 leveldb::Slice s((char *)tmp, sizeof(int)*arr_size);
-                tmp[1] = 10+i;
-                tmp[arr_size-2] = 2+i;
+                //tmp[1] = 10+i;
+                tmp[1] = 77;
+                //tmp[arr_size-2] = 2+i;
+                tmp[arr_size-2] = 88;
                 std::string key = "key";
                 std::stringstream ss;
                 ss << i;
-                key += std::string(ss.str());
+                //key += std::string(ss.str());
 
                 leveldb::WriteOptions wo;
 //                wo.sync = true;
 				status = db->Put(wo, key, s);
 
-				ROS_INFO("from nodelet 1: key: %s", key.c_str());
+				ROS_INFO("Put: from nodelet 1: key: %s", key.c_str());
                 return;
             }
     
@@ -307,7 +357,7 @@ namespace test_nodelet1_ns
                 std::string value;
                 std::stringstream ss;
                 ss << i;
-                key += std::string(ss.str());
+                //key += std::string(ss.str());
 
                 leveldb::ReadOptions ro;
 //                wo.sync = true;
@@ -322,7 +372,8 @@ namespace test_nodelet1_ns
 //                    SaveError(errptr, s);
 //                    }
                 }
-				ROS_INFO("from nodelet 1 of tmp[arr_size-2]: %d", tmp[arr_size-2]);
+				ROS_INFO("Get: from nodelet 1 of tmp[1]: %d", tmp[1]);
+				ROS_INFO("Get: from nodelet 1 of tmp[arr_size-2]: %d", tmp[arr_size-2]);
 
                 return;
             }
@@ -384,7 +435,8 @@ namespace test_nodelet1_ns
 
 				//DB stuff
 				options.create_if_missing = true;
-				leveldb::Status status = leveldb::DB::Open(options, "/home/hmetal/tmp/testdb", &db); // open the databaser
+				//leveldb::Status status = leveldb::DB::Open(options, "/home/hmetal/tmp/testdb", &db); // open the databaser
+				leveldb::Status status = leveldb::DB::Open(options, "/tmp/testdb", &db); // open the databaser
 				assert(status.ok());
 
 				if (!status.ok()) std::cout << status.ToString() << std::endl;
