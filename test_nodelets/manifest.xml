@@ -12,6 +12,7 @@ test_nodelets
 <depend package="nodelet"/>
 <depend package="roscpp"/>
 <depend package="std_msgs"/>
+<rosdep name="boost" />
 
 <export>
 <nodelet plugin="${prefix}/test_nodelet1.xml"/>

@@ -22,12 +22,15 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 rosbuild_gensrv()
 
 #common commands for building c++ executables and libraries
-
+rosbuild_add_boost_directories()
 rosbuild_add_library(pointeraddressutils src/PointerAddressUtils.cpp)
 
 rosbuild_add_library(test_nodelet1 src/test_nodelet1.cpp)
 target_link_libraries(test_nodelet1 leveldb)
 target_link_libraries(test_nodelet1 pointeraddressutils)
+#target_link_libraries(test_nodelet1 ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} )
+target_link_libraries(test_nodelet1 boost_iostreams boost_serialization)
+#rosbuild_link_boost(test_nodelet1 boost_iostreams boost_serialization)
 
 rosbuild_add_library(test_nodelet2 src/test_nodelet2.cpp)
 target_link_libraries(test_nodelet1 leveldb)

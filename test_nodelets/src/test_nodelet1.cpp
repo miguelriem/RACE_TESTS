@@ -1,4 +1,4 @@
-#include <pluginlib/class_list_macros.h>                                                                                                               
+#include <pluginlib/class_list_macros.h> 
 #include <nodelet/nodelet.h>
 #include <ros/ros.h>
 #include <sensor_msgs/PointCloud2.h>
@@ -17,6 +17,145 @@
 
 using namespace std;
 
+template <typename T>
+class LevelDBUtils
+{
+	public:
+//	LevelDBUtils<T>{};
+//	~LevelDBUtils{};
+
+};
+
+static int const arr_size=1*1024*1024;
+static char const seperate= ',';
+
+#include <ros/message_traits.h>
+#include <ros/serialization.h>
+
+
+namespace my_rclass
+{
+template <class ContainerAllocator>
+struct myClass_
+{
+    typedef myClass_<ContainerAllocator> Type;
+
+    myClass_()
+    : arrSize()
+    , arrName()
+    , data()  {
+    } 
+
+    myClass_(const ContainerAllocator& _alloc)
+    : arrSize(arr_size)
+    , arrName()
+    , data(_alloc)  {
+    } 
+
+    typedef uint32_t _arrary_size;
+    _arrary_size arrSize;
+
+    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _arrary_name;
+    _arrary_name arrName;
+
+    typedef std::vector<uint8_t, typename ContainerAllocator::template rebind<uint8_t>::other >  _data_type;
+    _data_type data;
+
+    typedef boost::shared_ptr< ::my_rclass::myClass_<ContainerAllocator> > Ptr;
+    typedef boost::shared_ptr< ::my_rclass::myClass_<ContainerAllocator> const> ConstPtr;
+    boost::shared_ptr<std::map<std::string, std::string> > __connection_header;
+
+};
+
+typedef ::my_rclass::myClass_<std::allocator<void> > myClass;
+
+typedef boost::shared_ptr< ::my_rclass::myClass > myClassPtr;
+typedef boost::shared_ptr< ::my_rclass::myClass const> myClassConstPtr;
+
+// constants requiring out of line definition
+
+
+
+template<typename ContainerAllocator>
+std::ostream& operator<<(std::ostream& s, const ::my_rclass::myClass_<ContainerAllocator> & v)
+{
+    ros::message_operations::Printer< ::my_rclass::myClass_<ContainerAllocator> >::stream(s, "", v);
+    return s;
+}
+
+} // namespace my_rclass
+
+
+namespace ros
+{
+namespace serialization
+{
+
+  template<class ContainerAllocator> struct Serializer< ::my_rclass::myClass_<ContainerAllocator> >
+  {
+    template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
+    {
+      stream.next(m.arrSize);
+      stream.next(m.arrName);
+      stream.next(m.data);
+    }
+
+    ROS_DECLARE_ALLINONE_SERIALIZER;
+  }; // struct JointTrajectory_
+
+} // namespace serialization
+} // namespace ros
+
+
+
+#include <boost/archive/binary_oarchive.hpp>
+#include <boost/archive/binary_iarchive.hpp>
+#include <boost/serialization/string.hpp>
+#include <boost/serialization/array.hpp> 
+
+class myBClass
+{
+    friend class boost::serialization::access;
+    friend std::ostream & operator<<(std::ostream &os, const myBClass &mc);
+
+    template<class Archive>
+    void serialize(Archive & ar, const unsigned int version)
+    {   
+        ROS_INFO("start serialize func !!");
+        ar & arrSize;
+        ar & arrName;
+        ar & arrName2;
+//        ar & data;
+        ROS_INFO("start array serialization !!");
+//        for (int i =0; i < arrSize ; i++)
+//            ar & data[i];
+    
+        ROS_INFO("end serialize func !!");
+    }   
+
+public:
+    int arrSize;
+    std::string arrName;
+    std::string arrName2;
+//    int data[arr_size];
+    myBClass() : 
+        arrSize(arr_size)
+    {}; 
+};
+
+std::ostream & operator<<(std::ostream &os, const myBClass &mc)
+{
+    ROS_INFO("start operator << !!");
+    os << ' ' << mc.arrSize << (unsigned char)186 << mc.arrName << (unsigned char)186 << mc.arrName2 << '"';
+
+//    for (int i =0; i < mc.arrSize ; i++)
+//        os << '\n' << mc.data[i];
+
+    ROS_INFO("end operator << !!");
+    return os;
+}
+
+
 namespace test_nodelet1_ns
 {
 
@@ -34,6 +173,68 @@ namespace test_nodelet1_ns
 			}
 
 
+            void testBoostStr( int i)
+            {
+				leveldb::Status status;
+                
+                myBClass _mstr, _mstr2;
+                std::stringstream _stm;
+
+                std::string key = "key";
+                std::string value;
+                std::stringstream ss;
+                ss << i;
+                key += std::string(ss.str());
+
+                _mstr.arrName = key;
+                _mstr.arrSize = arr_size;
+                _mstr.arrName2 = "arrName2";
+//                _mstr.data[1] = 10+i;
+//                _mstr.data[arr_size-2] = 2+i;
+
+                ROS_INFO("The value of _mstr.arrName is =%s", _mstr.arrName.c_str());
+                std::stringbuf _sb;
+                std::ostream _os(&_sb);
+                boost::archive::binary_oarchive _oa(_os);
+                _oa << _mstr;
+
+//                std::stringstream os(std::ios_base::binary| std::ios_base::out| std::ios_base::in);
+//                {
+//                    boost::archive::binary_oarchive oa(os, boost::archive::no_header);
+//                    oa << _mstr;
+//                }
+
+//                ROS_INFO("The value of _mstr.data[arr_size-2] is =%d", _mstr.data[arr_size-2]);
+
+//std::stringstream is(std::string(buf, buf+os.str().length()), flags);
+                std::istream _is(&_sb);
+                boost::archive::binary_iarchive _ia(_is);
+//                ROS_INFO("The value of _mstr.data[arr_size-2] is =%d", _mstr.data[arr_size-2]);
+                _ia >> _mstr2;
+//                ROS_INFO("The value of _mstr.data[arr_size-2] is =%d", _mstr.data[arr_size-2]);
+
+                ROS_INFO("The value of _mstr2.arrName is =%s", _mstr2.arrName.c_str());
+                ROS_INFO("The value of _mstr2.arrName2 is =%s", _mstr2.arrName2.c_str());
+//                ROS_INFO("The value of _mstr2.data[1] is =%d", _mstr2.data[1]);
+//
+                leveldb::ReadOptions ro;
+//                wo.sync = true;
+				status = db->Get(ro, key, &value);
+//                if (status.ok()) {
+//				    ROS_INFO("from nodelet 1: key: %s, size: %d", key.c_str(), value.size());
+//                    memcpy(tmp, value.data(), value.size());
+//                } else {
+//				    ROS_INFO("from nodelet 1i, status is not ok: key: %s", key.c_str());
+////                    *vallen = 0;
+////                    if (!status.IsNotFound()) {
+////                        SaveError(errptr, status);
+////                    }
+//                }
+//				ROS_INFO("from nodelet 1 of tmp[arr_size-2]: %d", tmp[arr_size-2]);
+
+                return;
+            }
+
 			/**
 			 * @brief Is called when a point cloud is received
 			 *
@@ -43,48 +244,162 @@ namespace test_nodelet1_ns
 			{
 				static int i=0;
 
+//				ROS_INFO("The size of current point cloud is =%d", sizeof *input);
+//				ROS_INFO("The size of current point cloud data:height is =%d", input->height);
+//				ROS_INFO("The size of current point cloud data:row_step is =%d", input->row_step );
+//				ROS_INFO("The size of current point cloud data is =%d", input->row_step * input->height);
+
 				//Compute the new value of key1
-				i++;
-				std::string ss = "value " + boost::lexical_cast<std::string>(i);
-				ROS_INFO("This is the new value for key1=%s",ss.c_str());
+//				i++;
+//				std::string ss = "value " + boost::lexical_cast<std::string>(i);
+//				ROS_INFO("This is the new value for key1=%s",ss.c_str());
 
 				//Set the new value for key1
 				leveldb::Status status;
-				status = db->Put(leveldb::WriteOptions(), "key1", ss);
+                
+
+				testPutIntArr(i);
+				testGetIntArr(i);
+                testBoostStr(i);
+                i++;
 
 				//print everything on the db
 				ROS_INFO("from nodelet 1: full db keys");
 				leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
+                std::string str;
 				for (it->SeekToFirst(); it->Valid(); it->Next()) {
-					ROS_INFO("%s:%s",it->key().ToString().c_str(), it->value().ToString().c_str());
+                    str += it->key().ToString();
+                    str += " ";
 				}
+//				ROS_INFO("keys: %s", str.c_str());
 				assert(it->status().ok());  // Check for any errors found during the scan
 				delete it;
 
 			}
 
+            void testPutIntArr( int i)
+            {
+				leveldb::Status status;
+
+                int tmp[arr_size]; 
+                leveldb::Slice s((char *)tmp, sizeof(int)*arr_size);
+                tmp[1] = 10+i;
+                tmp[arr_size-2] = 2+i;
+                std::string key = "key";
+                std::stringstream ss;
+                ss << i;
+                key += std::string(ss.str());
+
+                leveldb::WriteOptions wo;
+//                wo.sync = true;
+				status = db->Put(wo, key, s);
+
+				ROS_INFO("from nodelet 1: key: %s", key.c_str());
+                return;
+            }
+    
+            void testGetIntArr( int i)
+            {
+				leveldb::Status status;
+                int tmp[arr_size]; 
+
+                std::string key = "key";
+                std::string value;
+                std::stringstream ss;
+                ss << i;
+                key += std::string(ss.str());
+
+                leveldb::ReadOptions ro;
+//                wo.sync = true;
+				status = db->Get(ro, key, &value);
+                if (status.ok()) {
+				    ROS_INFO("from nodelet 1: key: %s, size: %d", key.c_str(), (int)value.size());
+                    memcpy(tmp, value.data(), value.size());
+                } else {
+				    ROS_INFO("from nodelet 1i, status is not ok: key: %s", key.c_str());
+//                    *vallen = 0;
+//                    if (!s.IsNotFound()) {
+//                    SaveError(errptr, s);
+//                    }
+                }
+				ROS_INFO("from nodelet 1 of tmp[arr_size-2]: %d", tmp[arr_size-2]);
+
+                return;
+            }
+
+
+//            void testRosBoostStr()
+//            {
+//				leveldb::Status status;
+//
+//                int tmp[arr_size]; 
+//                ::my_rclass::myClass _mstr();
+////                ::my_rclass::myClass _mstr(tmp);
+//                ::my_rclass::myClass _mstr2;
+//                std::stringstream _stm;
+//
+//                _mstr.arrName = "key1";
+//                _mstr.arrSize = arr_size;
+//                _mstr.data[1] = 10;
+//                _mstr.data[arr_size-2] = 2;
+//
+//				ROS_INFO("The value of _mstr.arrName is =%s", _mstr.arrName.c_str());
+//
+//
+//                uint32_t serial_size = ros::serialization::serializationLength(_mstr);
+//                boost::shared_array<uint8_t> buffer(new uint8_t[serial_size]);
+//
+//				ROS_INFO("The size of serial is =%d", serial_size);
+//
+//                ros::serialization::OStream stream(buffer.get(), serial_size);
+//                ros::serialization::serialize(stream, _mstr);
+//
+//                std::stringbuf _sb;
+//
+//                std::ostream _os(&_sb);
+//                boost::archive::binary_oarchive _oa(_os);
+//                _oa << _mstr;
+//
+//
+//                std::istream _is(&_sb);
+//                boost::archive::binary_iarchive _ia(_is);
+//                _ia >> _mstr2;
+//
+//
+//				ROS_INFO("The value of _mstr2.arrName is =%s", _mstr2.arrName.c_str());
+//				ROS_INFO("The value of _mstr2.data[1] is =%d", _mstr2.data[1]);
+//
+//                _mstr2.arrName = "kkkkkkey22222222";
+//                _mstr2.arrSize = arr_size;
+//                _mstr2.data[1] = 11;
+//                _mstr2.data[arr_size-2] = 3;
+//
+//				ROS_INFO("The size of _mstr is =%d", sizeof(_mstr));
+//				ROS_INFO("The size of _mstr2 is =%d", sizeof(_mstr2));
+//            }
+//
 
 			virtual void onInit() //mandatory method for nodelet manager to call
 			{
 
 				//DB stuff
 				options.create_if_missing = true;
-				leveldb::Status status = leveldb::DB::Open(options, "/tmp/testdb", &db); // open the databaser
+				leveldb::Status status = leveldb::DB::Open(options, "/home/hmetal/tmp/testdb", &db); // open the databaser
 				assert(status.ok());
 
 				if (!status.ok()) std::cout << status.ToString() << std::endl;
 				ROS_INFO("DB created. Status is %s address is %p\n Initial DB status is", status.ToString().c_str(), db);
 
 				//print everything on the db. before adding anything else
-				leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
-				for (it->SeekToFirst(); it->Valid(); it->Next()) {
-					ROS_INFO("%s:%s",it->key().ToString().c_str(), it->value().ToString().c_str());
-				}
-				assert(it->status().ok());  // Check for any errors found during the scan
-				delete it;
+//				leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
+//				for (it->SeekToFirst(); it->Valid(); it->Next()) {
+//					ROS_INFO("%s:%s",it->key().ToString().c_str(), it->value().ToString().c_str());
+//				}
+//				assert(it->status().ok());  // Check for any errors found during the scan
+//				delete it;
 
-				//Add some stuff to the db
-				status = db->Put(leveldb::WriteOptions(), "key1", "value1"); //Put some info on the database
+//				//Add some stuff to the db
+//				status = db->Put(leveldb::WriteOptions(), "key1", "value1"); //Put some info on the database
 
 
 				// do some ros speficif initial configuration
