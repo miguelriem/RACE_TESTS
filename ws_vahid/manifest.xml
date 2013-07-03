@@ -1,0 +1,16 @@
+<package>
+  <description brief="ws_vahid">
+
+     ws_vahid
+
+  </description>
+  <author>vahid</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ws_vahid</url>
+<depend package="roscpp"/>
+<depend package="std_msgs"/>
+
+</package>
+
+
