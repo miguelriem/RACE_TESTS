@@ -42,6 +42,7 @@ int main(int argc, char **argv)
 
   ros::Rate loop_rate(2);
 
+  ROS_INFO("%s node started\n", _name.c_str());
  //int count = 0;
   while (ros::ok())
   {
