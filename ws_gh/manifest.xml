@@ -1,0 +1,16 @@
+<package>
+  <description brief="ws_gh">
+
+     ws_gh
+
+  </description>
+  <author>Gi Hyun Lim</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ws_gh</url>
+
+<depend package="roscpp"/>
+<depend package="std_msgs"/>
+</package>
+
+
