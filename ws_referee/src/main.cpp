@@ -18,7 +18,7 @@ int main(int argc, char **argv)
    */
   ros::NodeHandle n;
 
-  ros::Publisher pub = n.advertise<std_msgs::String>("ws_m", 1);
+  ros::Publisher pub = n.advertise<std_msgs::String>("player_out", 1);
 
   std_msgs::String msg_out;
   ROS_INFO("%s will publish a msg\n", _name.c_str());
