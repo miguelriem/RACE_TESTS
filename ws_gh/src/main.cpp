@@ -103,6 +103,8 @@ int main(int argc, char **argv)
   chatter_pub = n.advertise<std_msgs::String>("player_in", 1);
   ros::Subscriber sub = n.subscribe("player_out", 1, chatterCallback);
 
+
+   ROS_INFO("%s: start", _name.c_str());
 // %EndTag(PUBLISHER)%
 
 // %Tag(LOOP_RATE)%
@@ -114,9 +116,9 @@ int main(int argc, char **argv)
    * a unique string for each message.
    */
 // %Tag(ROS_OK)%
-//  int count = 0;
-//  while (ros::ok())
-//  {
+  int count = 0;
+  while (ros::ok())
+  {
 //// %EndTag(ROS_OK)%
 //    /**
 //     * This is a message object. You stuff it with data, and then publish it.
@@ -145,14 +147,14 @@ int main(int argc, char **argv)
 //// %EndTag(PUBLISH)%
 //
 //// %Tag(SPINONCE)%
-//    ros::spinOnce();
+    ros::spinOnce();
 //// %EndTag(SPINONCE)%
 //
 //// %Tag(RATE_SLEEP)%
-//    loop_rate.sleep();
+    loop_rate.sleep();
 //// %EndTag(RATE_SLEEP)%
-//    ++count;
-//  }
+    ++count;
+  }
 
 
   return 0;

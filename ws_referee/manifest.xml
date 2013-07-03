@@ -1,0 +1,16 @@
+<package>
+  <description brief="ws_referee">
+
+     ws_referee
+
+  </description>
+  <author>Aneesh</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ws_referee</url>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+
+</package>
+
+
