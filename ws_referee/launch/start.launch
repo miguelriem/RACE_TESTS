@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="ws_referee" type="ws_referee" name="referee" output="screen" required="true">
+        <remap from="player_out" to="ws_m"/>
+    </node>
+</launch>
+
