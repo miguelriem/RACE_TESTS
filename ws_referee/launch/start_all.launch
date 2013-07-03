@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- This is a launch file for an exmaple on how to bringup of the race perception architecture-->
+<launch>
+<!-- this flag will configure a nodes or nodelets based system-->
+<!--<arg name="use_nodelets" default="0"/>-->
+
+	<include file="$(find ws_referee)/launch/start.launch"/>
+	<include file="$(find ws_mike)/launch/start.launch"/>
+	<include file="$(find ws_gh)/launch/start.launch"/>
+	<include file="$(find ws_hamid)/launch/start.launch"/>
+	<include file="$(find ws_vahid)/launch/start.launch"/>
+	<include file="$(find ws_paulo)/launch/start.launch"/>
+	<include file="$(find ws_aneesh)/launch/start.launch"/>
+
+</launch>
