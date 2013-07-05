@@ -259,8 +259,9 @@ namespace test_nodelet1_ns
 				test_nodelets::StructSerialization msg_in;
 
 				//Add stuff to msg_in
-				//msg_in.string1 = "hello";
-				//msg_in.vec_int1.push_back(100); msg_in.vec_int1.push_back(101); msg_in.vec_int1.push_back(102);
+				msg_in.string1 = "hello asda sdwqr rew";
+				msg_in.vec_int1.push_back(100); msg_in.vec_int1.push_back(101); msg_in.vec_int1.push_back(102);
+				msg_in.vec_int1.push_back(700); msg_in.vec_int1.push_back(101); msg_in.vec_int1.push_back(102);
 
 				//Compute msg_in size
 				uint32_t serial_size = ros::serialization::serializationLength(msg_in);
@@ -279,11 +280,33 @@ namespace test_nodelet1_ns
 				ROS_INFO("finihsed serialization");
 
 
+/* _________________________________
+  |                                 |
+  |     PUT SERIALIZED MSG TO DB    |
+  |_________________________________| */
+
+
+				//make a LBD slice from the serialized buffer
+				leveldb::Slice s((char*)buffer.get(), serial_size);
+				leveldb::WriteOptions wo;
+				wo.sync = true;
+				leveldb::Status status;
+				status = db->Put(wo, "slice_test", s);
+				ROS_INFO("Put slice to the db");
+
+
+/* _________________________________
+  |                                 |
+  |     GET SERIALIZED MSG FROM DB  |
+  |_________________________________| */
+				leveldb::ReadOptions ro;
+				std::string value;
+				status = db->Get(ro, "slice_test", &value);
+
 				/* _________________________________
 				   |                                 |
 				   |           DESERIALIZATION       |
 				   |_________________________________| */
-//db_buffer char* ;
 
 				//input2 size
 				uint32_t deserial_size = serial_size; //compute the size of the msg in the buffer (given by DB)
@@ -291,12 +314,14 @@ namespace test_nodelet1_ns
 
 				//input1 buffer
 				
-                char db_buffer[deserial_size] ;
+                //uint8_t db_buffer[deserial_size] ;
+				//char* db_buffer[deserial_size] ;
 				//Fill buffer with a serialized UInt32
 				boost::shared_array<uint8_t> buffer1(new uint8_t[deserial_size]);
 				ROS_INFO("declared shared array buffer 1");
-//				memcpy(buffer1.get(), db_buffer, deserial_size);
-				memcpy(buffer1.get(), buffer.get(), deserial_size);
+				//memcpy(buffer1.get(), s.data(), deserial_size);
+				//memcpy(buffer1.get(), buffer.get(), deserial_size);
+				memcpy(buffer1.get(), value.data(), value.size());
 
 				ROS_INFO("dida memcopy");
 
@@ -315,11 +340,11 @@ namespace test_nodelet1_ns
 				ROS_INFO("finished to serialize");
 
 				//print array values
-				//ROS_INFO("string1=%s\nsize vec_int1=%ld", msg_out.string1.c_str(), msg_out.vec_int1.size());
-				//for (size_t i=0; i<msg_out.vec_int1.size(); i++)
-				//{
-					//ROS_INFO("size vec_int1[%ld]=%ld", i,msg_out.vec_int1.at(i));
-				//}
+				ROS_INFO("string1=%s\nsize vec_int1=%ld", msg_out.string1.c_str(), msg_out.vec_int1.size());
+				for (size_t i=0; i<msg_out.vec_int1.size(); i++)
+				{
+					ROS_INFO("size vec_int1[%ld]=%ld", i,msg_out.vec_int1.at(i));
+				}
 
 				return;
 				//				ROS_INFO("The size of current point cloud is =%d", sizeof *input);
@@ -333,7 +358,7 @@ namespace test_nodelet1_ns
 				//				ROS_INFO("This is the new value for key1=%s",ss.c_str());
 
 				//Set the new value for key1
-				leveldb::Status status;
+				//leveldb::Status status;
 
 
 				testPutIntArr(i);
