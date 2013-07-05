@@ -16,7 +16,7 @@ run roscore
 >> roscore
 
 Launch nodelet manager
->> run nodelet nodelet manager __name:=nodelet_manager
+>> rosrun nodelet nodelet manager __name:=nodelet_manager
 
 Launch nodelet1 
 >> rosrun nodelet nodelet load test_nodelet1_ns/test_nodelet1 nodelet_manager __name:=nodelet1
@@ -30,6 +30,10 @@ To publish a pc do
 rosbag play {bag file containing point clouds on topic /camera/depth_registered/points} -l
 >> rosbag play pointcloud.bag -l
 
+
+
+Or launch with launch file
+>> roslaunch test_nodelets start_nodelet.launch 
 -->
 
 -->

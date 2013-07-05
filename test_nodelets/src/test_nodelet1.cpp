@@ -290,9 +290,12 @@ namespace test_nodelet1_ns
 				ROS_INFO("deserialized msg size will be %d", deserial_size);
 
 				//input1 buffer
+				
+                char db_buffer[deserial_size] ;
 				//Fill buffer with a serialized UInt32
 				boost::shared_array<uint8_t> buffer1(new uint8_t[deserial_size]);
 				ROS_INFO("declared shared array buffer 1");
+//				memcpy(buffer1.get(), db_buffer, deserial_size);
 				memcpy(buffer1.get(), buffer.get(), deserial_size);
 
 				ROS_INFO("dida memcopy");
