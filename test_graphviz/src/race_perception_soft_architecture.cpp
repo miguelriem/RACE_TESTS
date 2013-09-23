@@ -34,8 +34,8 @@ pthread_mutex_t _draw_mutex;
 void*GraphicalThread(void*data)
 {
 
-	graph_context=new GVGraph("graph 123");
-	gvconfig_plugin_install_from_library(graph_context->getGVCcontext(), NULL, &gvplugin_xgtk_LTX_library);
+	//graph_context=new GVGraph("graph 123");
+	//gvconfig_plugin_install_from_library(graph_context->getGVCcontext(), NULL, &gvplugin_xgtk_LTX_library);
 
 	//graph_context->addNode("node1");
 	//graph_context->setRootNode("node1");
@@ -198,12 +198,12 @@ void*GraphicalThread(void*data)
 
 int main(int argc, char **argv)
 {
-	//ros::init(argc, argv, "talker");
-	//ros::NodeHandle n;
-	//ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
-	//ros::Rate loop_rate(1);
+	ros::init(argc, argv, "talker");
+	ros::NodeHandle n;
+	ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+	ros::Rate loop_rate(1);
 
-	std::ostream out;
+	//std::ostream out;
 	//Agraph_t *g;
 	graph_t *g;
 
@@ -265,8 +265,16 @@ int main(int argc, char **argv)
 
 	/* close output file, free context, and return number of errors */
 
-	return (gvFreeContext(gvc));
-	//pthread_create( &graph_thread, NULL, GraphicalThread,NULL);
+	//return (gvFreeContext(gvc));
+	//
+	//
+	ROS_INFO("1");
+	graph_context=new GVGraph("graph 123");
+	ROS_INFO("2");
+	gvconfig_plugin_install_from_library(graph_context->getGVCcontext(), NULL, &gvplugin_xgtk_LTX_library);
+	ROS_INFO("3");
+
+	pthread_create( &graph_thread, NULL, GraphicalThread,NULL);
 
 	//ros::Duration(1).sleep();
 	//pthread_mutex_lock(&(_draw_mutex));
@@ -358,45 +366,45 @@ int main(int argc, char **argv)
 	////graph_context->setEdgeAttribute("node 76", "node 6751","label","on_top");
 	//pthread_mutex_unlock(&(_draw_mutex));
 
-	//int count = 1;
-	//while (ros::ok())
-	//{
-	//std_msgs::String msg;
 
-	//std::stringstream ss;
-	//ss << "hello world " << count;
-	//msg.data = ss.str();
+	int count = 1;
+	while (ros::ok())
+	{
+	std_msgs::String msg;
 
-	//ROS_INFO("%s", msg.data.c_str());
-	//chatter_pub.publish(msg);
+	std::stringstream ss;
+	ss << "hello world " << count;
+	msg.data = ss.str();
 
-	//ros::spinOnce();
+	ROS_INFO("%s", msg.data.c_str());
+	chatter_pub.publish(msg);
 
-	//loop_rate.sleep();
-	//++count;
+	ros::spinOnce();
 
-
-	////graph_context->clearNodes();
-
-	////graph_context=new GVGraph("graph 123");
-	////gvconfig_plugin_install_from_library(graph_context->getGVCcontext(), NULL, &gvplugin_xgtk_LTX_library);
+	loop_rate.sleep();
+	++count;
 
 
-	////pthread_mutex_lock(&(_draw_mutex));
-	////std::string prev_node_name = "node " + boost::lexical_cast<std::string>(count-1);
-	////std::string node_name = "node " + boost::lexical_cast<std::string>(count);
-	////ROS_INFO("Adding a new node named %s",node_name.c_str());
-	////graph_context->addNode(node_name);
-	////graph_context->setNodeAttribute(node_name,"shape","record");
-	////graph_context->setNodeAttribute(node_name,"label","sdf | dsf | dsf | ewr");
-	////graph_context->addEdge(prev_node_name, node_name);
-	////graph_context->setRootNode(node_name);
+	//graph_context->clearNodes();
 
-	////pthread_mutex_unlock(&(_draw_mutex));
-	////graph_context->addNode("node3");
-	////graph_context->addEdge("node1", "node3");
 
-	//}
+
+	pthread_mutex_lock(&(_draw_mutex));
+	std::string prev_node_name = "node " + boost::lexical_cast<std::string>(count-1);
+	std::string node_name = "node " + boost::lexical_cast<std::string>(count);
+	ROS_INFO("Adding a new node named %s",node_name.c_str());
+	graph_context->addNode(node_name);
+	graph_context->setNodeAttribute(node_name,"shape","box");
+	//graph_context->setNodeAttribute(node_name,"label","sdf | dsf | dsf | ewr");
+	graph_context->addEdge(prev_node_name, node_name);
+	graph_context->setRootNode(node_name);
+
+	graph_context->addNode("node3");
+	graph_context->addEdge("node1", "node3");
+
+	pthread_mutex_unlock(&(_draw_mutex));
+
+	}
 
 
 	return 0;
